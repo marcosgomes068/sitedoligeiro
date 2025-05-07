@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Milho Verde | Ligeirinho Agro Indústria</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      background: #181818;
+      font-family: 'Montserrat', 'Playfair Display', Arial, serif;
+      color: #e5e5e5;
+      min-height: 100vh;
+    }
+    .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3.5rem 1.2rem 4rem 1.2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+    .page-title {
+      text-align: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 2.4rem;
+      color: #7CFC00;
+      margin-bottom: 0.5rem;
+      letter-spacing: 1px;
+    }
+    .subtitle {
+      text-align: center;
+      font-size: 1.13rem;
+      color: #b7e9b7;
+      margin-bottom: 2.3rem;
+    }
+    .product-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3.8rem 4.5rem;
+  justify-content: center;
+  margin-bottom: 3.2rem;
+  width: 100%;
+}
+    .product-row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  background: #232323;
+  border-radius: 26px;
+  box-shadow: 0 8px 36px rgba(124,252,0,0.13);
+  padding: 2.6rem 2.2rem 2.6rem 2.2rem;
+  min-width: 340px;
+  max-width: 390px;
+  width: 100%;
+  margin: 0;
+  position: relative;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.7s cubic-bezier(.4,0,.2,1), transform 0.7s cubic-bezier(.4,0,.2,1), box-shadow 0.18s, transform 0.18s;
+}
+.product-row.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+.product-row:hover {
+  transform: translateY(-10px) scale(1.045);
+  box-shadow: 0 14px 48px rgba(124,252,0,0.19);
+}
+    .product-img.square {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 20px;
+  background: #191919;
+  border: 3px solid #7CFC00;
+  box-shadow: 0 4px 32px rgba(124,252,0,0.13);
+  margin-bottom: 1.7rem;
+  margin-right: 0;
+  margin-left: 0;
+  position: static;
+  opacity: 0;
+  transform: scale(1.07);
+  transition: opacity 0.7s cubic-bezier(.4,0,.2,1), transform 0.7s cubic-bezier(.4,0,.2,1), box-shadow 0.18s, transform 0.18s;
+}
+.product-row.show .product-img.square {
+  opacity: 1;
+  transform: scale(1);
+}
+.product-row:hover .product-img.square {
+  box-shadow: 0 10px 40px rgba(124,252,0,0.25);
+  transform: scale(1.09);
+}
+    .product-info {
+  background: none;
+  border-radius: 0;
+  padding: 0;
+  min-width: 0;
+  box-shadow: none;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  text-align: center;
+}
+    .product-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.25rem;
+      color: #7CFC00;
+      margin-bottom: 0.4rem;
+      font-weight: 700;
+    }
+    .product-desc {
+      font-size: 1.05rem;
+      color: #e5e5e5;
+      margin-bottom: 0.2rem;
+      font-family: 'Montserrat', Arial, sans-serif;
+    }
+    @media (max-width: 900px) {
+      .product-img.square { width: 110px; height: 110px; margin-right: 1.1rem; }
+      .product-info { padding: 1.3rem 1rem; }
+    }
+    @media (max-width: 700px) {
+      .container { padding: 1.2rem 0.3rem 2.2rem 0.3rem; }
+      .page-title { font-size: 1.45rem; }
+      .product-row { flex-direction: column; min-height: unset; align-items: center; }
+      .product-img.square {
+        width: 70vw;
+        max-width: 260px;
+        height: 70vw;
+        max-height: 260px;
+        margin: 0 auto 0.7rem auto;
+      }
+      .product-info {
+        padding: 1.1rem 0.5rem;
+        align-items: center;
+        text-align: center;
+      }
+      .product-name { font-size: 1.05rem; }
+      .product-desc { font-size: 0.92rem; }
+    }
+    @media (max-width: 500px) {
+      .product-img.square { height: 48vw; max-height: 98vw; max-width: 98vw; }
+      .product-name { font-size: 0.98rem; }
+      .product-desc { font-size: 0.83rem; }
+    }
+  </style>
+  <script>
+    window.addEventListener('DOMContentLoaded', function() {
+      const rows = document.querySelectorAll('.product-row');
+      rows.forEach((row, i) => {
+        setTimeout(() => row.classList.add('show'), 160 + i * 170);
+      });
+    });
+  </script>
+</head>
+<body>
+  <div class="container">
+    <a href="catalogo.html" class="catalog-btn"><span class="arrow">&larr;</span> Voltar para o Catálogo</a>
+<style>
+.catalog-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  background: #7CFC00;
+  color: #181818;
+  font-family: 'Montserrat', 'Playfair Display', Arial, serif;
+  font-weight: 700;
+  font-size: 1.08rem;
+  border: none;
+  border-radius: 18px;
+  padding: 0.7em 1.6em;
+  text-decoration: none;
+  box-shadow: 0 2px 14px rgba(124,252,0,0.13);
+  transition: background 0.18s, color 0.18s, box-shadow 0.18s, transform 0.15s;
+  cursor: pointer;
+  margin-bottom: 1.4rem;
+}
+.catalog-btn .arrow {
+  font-size: 1.2em;
+  transition: transform 0.18s;
+}
+.catalog-btn:hover, .catalog-btn:focus {
+  background: #5fd100;
+  color: #fff;
+  box-shadow: 0 4px 24px rgba(124,252,0,0.22);
+  transform: translateY(-2px) scale(1.04);
+}
+.catalog-btn:hover .arrow, .catalog-btn:focus .arrow {
+  transform: translateX(-4px);
+}
+</style>
+    <h1 class="page-title">Milho Verde</h1>
+    <div class="subtitle">Milho verde fresco, direto do campo para sua mesa:</div>
+    <div class="product-list">
+      <div class="product-row">
+        <img class="product-img square" src="https://images.unsplash.com/photo-1502741338009-cac2772e18bc?auto=format&fit=crop&w=600&q=80" alt="Milho Verde em Espiga">
+        <div class="product-info">
+          <div class="product-name">Milho Verde em Espiga</div>
+          <div class="product-desc">Colhido no ponto certo, sabor adocicado e textura macia. Ideal para festas e receitas típicas.</div>
+        </div>
+      </div>
+      <div class="product-row">
+        <img class="product-img square" src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=600&q=80" alt="Milho Verde Congelado">
+        <div class="product-info">
+          <div class="product-name">Milho Verde Congelado</div>
+          <div class="product-desc">Praticidade e frescor para o dia a dia. Mantém sabor e nutrientes.</div>
+        </div>
+      </div>
+      <div class="product-row">
+        <img class="product-img square" src="https://images.unsplash.com/photo-1519864600265-abb23847ef2c?auto=format&fit=crop&w=600&q=80" alt="Milho Verde para Pamonha">
+        <div class="product-info">
+          <div class="product-name">Milho Verde para Pamonha</div>
+          <div class="product-desc">Especial para pamonhas, curau e outras delícias típicas do interior.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

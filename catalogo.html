@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo | Ligeirinho Agro Indústria</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+    <style>
+    .hero-section {
+      position: relative;
+      min-height: 55vh;
+      width: 100vw;
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      margin-bottom: 0.8rem;
+      overflow: hidden;
+      animation: hero-zoom-in 1.2s cubic-bezier(.4,0,.2,1);
+      transition: background-size 0.7s cubic-bezier(.4,0,.2,1);
+    }
+    .hero-section::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0,0,0,0.55);
+      z-index: 1;
+      pointer-events: none;
+      transition: background 0.6s;
+    }
+    .hero-content {
+      position: absolute;
+      top: 4vw;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      max-width: 900px;
+      text-align: center;
+      color: #fff;
+      z-index: 2;
+      pointer-events: none;
+      padding: 0 4vw;
+      box-sizing: border-box;
+      word-break: break-word;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+    }
+    @media (max-width: 700px) {
+      .hero-content {
+        top: 5vw;
+        padding-left: 3vw;
+        padding-right: 4vw;
+      }
+    }
+    @media (max-width: 500px) {
+      .hero-content {
+        top: 2vw;
+        padding-left: 2vw;
+        padding-right: 2vw;
+        font-size: 0.93rem;
+        max-width: 98vw;
+        box-sizing: border-box;
+        word-break: break-word;
+        overflow-wrap: break-word;
+        white-space: normal;
+      }
+      .hero-title {
+        font-size: 1.05rem;
+        max-width: 96vw;
+        word-break: break-word;
+        overflow-wrap: break-word;
+        white-space: normal;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+      .hero-subtext {
+        font-size: 0.88rem;
+        max-width: 96vw;
+        word-break: break-word;
+        overflow-wrap: break-word;
+        white-space: normal;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+    }
+    .hero-section:hover {
+      background-size: 108% auto;
+    }
+    @keyframes hero-zoom-in {
+      0% { background-size: 120% auto; }
+      100% { background-size: 100% auto; }
+    }
+    
+    
+    .hero-title {
+      font-size: 2.7rem;
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      margin: 0 0 0.7rem 0;
+      letter-spacing: 1px;
+      color: #7CFC00;
+      text-shadow: 0 6px 32px rgba(0,0,0,0.7), 0 1px 0 #222;
+    }
+    .hero-subtext {
+      font-size: 1.32rem;
+      font-family: 'Montserrat', Arial, sans-serif;
+      font-weight: 400;
+      margin: 0 0 2.2rem 0;
+      color: #e5e5e5;
+      text-shadow: 0 4px 24px rgba(0,0,0,0.7), 0 1px 0 #222;
+    }
+    @media (max-width: 700px) {
+      .hero-title { font-size: 1.35rem; }
+      .hero-subtext { font-size: 0.98rem; }
+      .hero-content { top: 5vw; }
+    }
+    @media (max-width: 500px) {
+      .hero-title { font-size: 1.09rem; }
+      .hero-subtext { font-size: 0.93rem; }
+      .hero-content { top: 2vw; }
+    }
+        body {
+            margin: 0;
+            font-family: 'Montserrat', 'Playfair Display', Arial, serif;
+            background: #111;
+            color: #e5e5e5;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        header {
+            width: 100vw;
+            background: rgba(0,0,0,0.80);
+            display: flex;
+            align-items: center;
+            padding: 0 28px;
+            height: 58px;
+            border-bottom: 1px solid #222;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+            color: #7CFC00;
+            letter-spacing: 2px;
+            gap: 10px;
+        }
+        .logo-img {
+            width: 36px;
+            height: 36px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 2px solid #7CFC00;
+        }
+        .catalog-title {
+            margin: 2.3rem 0 0.7rem 0;
+            text-align: center;
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #7CFC00;
+            letter-spacing: 1px;
+            word-break: break-word;
+            padding: 0 5vw;
+            max-width: 100vw;
+            box-sizing: border-box;
+        }
+        .catalog-desc {
+            text-align: center;
+            font-size: 1.15rem;
+            color: #e5e5e5;
+            margin-bottom: 2.1rem;
+            word-break: break-word;
+            padding: 0 6vw;
+            max-width: 100vw;
+            box-sizing: border-box;
+            overflow-wrap: break-word;
+        }
+        .catalog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+            gap: 2.3rem;
+            padding: 0 4vw 3.5rem 4vw;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .product-card {
+            background: transparent;
+            border-radius: 18px;
+            box-shadow: none;
+            padding: 1.3rem 1.1rem 1.7rem 1.1rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: transform 0.22s cubic-bezier(.4,0,.2,1), box-shadow 0.22s;
+            position: relative;
+            min-height: 360px;
+        }
+        .product-card:hover {
+            transform: translateY(-7px) scale(1.025);
+            box-shadow: 0 10px 38px 0 rgba(124,252,0,0.13);
+        }
+        .product-img {
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 14px;
+            border: 2px solid #7CFC00;
+            margin-bottom: 1rem;
+            background: #181818;
+        }
+        .product-name {
+            font-size: 1.18rem;
+            font-weight: 700;
+            color: #7CFC00;
+            margin-bottom: 0.5rem;
+            text-align: center;
+        }
+        .product-desc {
+            font-size: 1rem;
+            color: #e5e5e5;
+            margin-bottom: 1.2rem;
+            text-align: center;
+        }
+        .contact-btn {
+            background: #25D366;
+            color: #111;
+            border: none;
+            border-radius: 30px;
+            font-size: 1.05rem;
+            font-weight: bold;
+            padding: 0.7rem 2.1rem 0.7rem 2.6rem;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.7rem;
+            box-shadow: 0 2px 18px 0 rgba(37,211,102,0.09);
+            transition: background 0.18s, color 0.18s, transform 0.18s;
+            position: relative;
+        }
+        .contact-btn:hover {
+            background: #7CFC00;
+            color: #111;
+            transform: translateY(-2px) scale(1.04);
+        }
+        .contact-btn svg {
+            width: 22px;
+            height: 22px;
+            margin-right: 0.1rem;
+        }
+        @media (max-width: 700px) {
+            .catalog-title { font-size: 1.25rem; padding: 0 4vw; }
+            .catalog-desc { font-size: 0.97rem; padding: 0 5vw; }
+        }
+        @media (max-width: 500px) {
+            header { height: 44px; padding: 0 7px; }
+            .logo-img { width: 24px; height: 24px; }
+            .catalog-title { font-size: 0.98rem; padding: 0 2vw; }
+            .catalog-desc { font-size: 0.89rem; padding: 0 3vw; }
+        }
+    .hero-btn-container {
+      position: absolute;
+      left: 50%;
+      bottom: 3vw;
+      transform: translateX(-50%);
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      z-index: 3;
+      pointer-events: none;
+    }
+    .hero-btn {
+      background: transparent;
+      color: #7CFC00;
+      font-family: 'Montserrat', 'Playfair Display', Arial, serif;
+      font-weight: 600;
+      font-size: 1.09rem;
+      border: 2px solid #7CFC00;
+      border-radius: 12px;
+      padding: 0.62em 2em;
+      margin-top: 0.5em;
+      box-shadow: none;
+      cursor: pointer;
+      transition: background 0.18s, color 0.18s, border-color 0.18s;
+      pointer-events: all;
+      outline: none;
+      position: relative;
+      overflow: hidden;
+      letter-spacing: 0.5px;
+    }
+    .hero-btn::after {
+      content: '';
+      position: absolute;
+      left: 0; top: 0; width: 100%; height: 100%;
+      background: #7CFC00;
+      opacity: 0;
+      transition: opacity 0.18s;
+      z-index: 0;
+    }
+    .hero-btn:hover, .hero-btn:focus {
+      color: #181818;
+      border-color: #7CFC00;
+      background: #7CFC00;
+    }
+    .hero-btn:active {
+      background: #5fd100;
+      color: #111;
+      border-color: #5fd100;
+    }
+    @media (max-width: 700px) {
+      .hero-btn {
+        font-size: 0.97rem;
+        padding: 0.68em 1.4em;
+      }
+      .hero-btn-container {
+        bottom: 1.7vw;
+      }
+    }
+    @media (max-width: 500px) {
+      .hero-btn {
+        font-size: 0.91rem;
+        padding: 0.55em 1em;
+      }
+      .hero-btn-container {
+        bottom: 1vw;
+      }
+    }
+</style>
+</head>
+<body>
+    <header>
+        <div class="logo" style="display: flex; align-items: center; gap: 10px; min-width: 200px;">
+  <a href="index.html"><img src="logo.jpg" alt="Logo" class="logo-img"></a>
+  <span class="logo-text" style="font-family: 'Montserrat', Arial, sans-serif; font-size: 1.3rem; color: #7CFC00; font-weight: bold; letter-spacing: 2px; display: inline-block; vertical-align: middle;">Ligeirinho Agro</span>
+</div>
+        </div>
+    </header>
+    <div class="catalog-title">Catálogo de Produtos</div>
+    <div class="catalog-desc">Conheça nossa linha completa de produtos naturais e de alta qualidade.</div>
+
+    <!-- Caldo de Cana -->
+    <section class="hero-section" style="background-image:url('imgcn.jpg')">
+      <div class="hero-content">
+          <h2 class="hero-title">Caldo de Cana</h2>
+          <p class="hero-subtext">O melhor caldo de cana do Brasil, natural, refrescante e cheio de sabor.</p>
+        </div>
+        <div class="hero-btn-container">
+          <a href="caldodecana.html" class="hero-btn" role="button">Ver Caldo de Cana</a>
+        </div>
+    </section>
+
+    <!-- Cachaças -->
+    <section class="hero-section" style="background-image:url('cchc.jpg')">
+      <div class="hero-content">
+          <h2 class="hero-title">Cachaças</h2>
+          <p class="hero-subtext">Produzida com rigor e tradição, perfeita para momentos especiais.</p>
+        </div>
+        <div class="hero-btn-container">
+          <a href="cachacas.html" class="hero-btn" role="button">Ver Cachaças</a>
+        </div>
+    </section>
+
+    <!-- Milho Verde -->
+    <section class="hero-section" style="background-image:url('https://images.unsplash.com/photo-1502741338009-cac2772e18bc?auto=format&fit=crop&w=800&q=80')">
+      <div class="hero-content">
+          <h2 class="hero-title">Milho Verde</h2>
+          <p class="hero-subtext">Milho verde selecionado, fresco e saboroso, direto da fazenda.</p>
+        </div>
+        <div class="hero-btn-container">
+          <a href="milhoverde.html" class="hero-btn" role="button">Ver Milho Verde</a>
+        </div>
+    </section>
+
+    <!-- Chocolates -->
+    <section class="hero-section" style="background-image:url('chocolate.jpg')">
+      <div class="hero-content">
+          <h2 class="hero-title">Chocolates</h2>
+          <p class="hero-subtext">Chocolates deliciosos, feitos com<br>ingredientes selecionados e muito carinho.</p>
+        </div>
+        <div class="hero-btn-container">
+          <a href="chocolates.html" class="hero-btn" role="button">Ver Chocolates</a>
+        </div>
+    </section>
+
+
+</body>
+</html>
