@@ -339,22 +339,22 @@
             <div class="nav-item nav-dropdown" id="produtos-dropdown">
                 <a href="#section1" id="produtos-link">Produtos</a>
                 <div class="dropdown-menu" id="dropdown-menu">
-                    <div class="dropdown-product">
+                    <a href="chocolates.html" class="dropdown-product" style="text-decoration:none;color:inherit;">
     <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=200&q=80" alt="Chocolates">
     <span>Chocolates</span>
-</div>
-<div class="dropdown-product">
+</a>
+<a href="catalogo.html#caldo" class="dropdown-product" style="text-decoration:none;color:inherit;">
     <img src="imgcn.jpg" alt="Caldo de Cana">
     <span>Caldo de Cana</span>
-</div>
-<div class="dropdown-product">
+</a>
+<a href="catalogo.html#cachacas" class="dropdown-product" style="text-decoration:none;color:inherit;">
     <img src="cchc.jpg" alt="Cachaças">
     <span>Cachaças</span>
-</div>
-<div class="dropdown-product">
+</a>
+<a href="milhoverde.html" class="dropdown-product" style="text-decoration:none;color:inherit;">
     <img src="https://images.unsplash.com/photo-1502741338009-cac2772e18bc?auto=format&fit=crop&w=200&q=80" alt="Milho Verde">
     <span>Milho Verde</span>
-</div>
+</a>
                 </div>
             </div>
             <a href="#section2">Catálogo</a>
@@ -371,10 +371,25 @@
         <div class="down-arrow" onclick="scrollToSection('section2')">&#8595;</div>
     </section>
     <section id="section2" class="section section-video">
-        <video class="bg-video" autoplay muted loop playsinline>
-            <source src="videobs.mp4" type="video/mp4">
-            Seu navegador não suporta vídeo HTML5.
-        </video>
+        <video class="bg-video" id="catalogo-video" autoplay muted loop playsinline poster="thumb.jpg">
+    <source src="videobs.mp4" type="video/mp4">
+    Seu navegador não suporta vídeo HTML5.
+</video>
+<script>
+(function() {
+  function isMobile() {
+    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+  }
+  var video = document.getElementById('catalogo-video');
+  if (video && isMobile()) {
+    video.removeAttribute('autoplay');
+    video.removeAttribute('loop');
+    video.removeAttribute('playsinline');
+    video.setAttribute('controls', 'controls');
+    video.load();
+  }
+})();
+</script>
         <div class="overlay"></div>
         <div class="section-content">
             <div class="section-title">Catálogo</div>
