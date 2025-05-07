@@ -375,21 +375,6 @@
     <source src="videobs.mp4" type="video/mp4">
     Seu navegador não suporta vídeo HTML5.
 </video>
-<script>
-(function() {
-  function isMobile() {
-    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-  }
-  var video = document.getElementById('catalogo-video');
-  if (video && isMobile()) {
-    video.removeAttribute('autoplay');
-    video.removeAttribute('loop');
-    video.removeAttribute('playsinline');
-    video.setAttribute('controls', 'controls');
-    video.load();
-  }
-})();
-</script>
         <div class="overlay"></div>
         <div class="section-content">
             <div class="section-title">Catálogo</div>
