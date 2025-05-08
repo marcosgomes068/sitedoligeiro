@@ -9,376 +9,361 @@
     body {
       margin: 0;
       background: #181818;
-      font-family: 'Montserrat', 'Playfair Display', Arial, serif;
+      font-family: 'Montserrat', Arial, sans-serif;
       color: #e5e5e5;
       min-height: 100vh;
     }
+    
     .container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 3.5rem 1.2rem 4rem 1.2rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 3.5rem 1.2rem 4rem 1.2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    header {
+      width: 100%;
+      background: #232323;
+      padding: 1.5rem 0 0.8rem 0;
+      box-shadow: 0 2px 18px 0 rgba(0,0,0,0.2);
+      margin-bottom: 2.2rem;
+    }
+    
+    .header-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 2vw;
+    }
+    
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    .logo {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      border: 2px solid #5ecb18;
+      object-fit: cover;
+    }
+    
+    .brand-name {
+      font-family: 'Montserrat', Arial, sans-serif;
+      font-weight: bold;
+      font-size: 1.3rem;
+      color: #5ecb18;
+      letter-spacing: 2px;
+    }
+    
+    .home-link {
+      color: #5ecb18;
+      font-weight: bold;
+      text-decoration: none;
+      font-size: 1.08rem;
+    }
+    
+    .catalog-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5em;
+      background: transparent;
+      color: #5ecb18;
+      border: 2px solid #5ecb18;
+      font-family: 'Montserrat', Arial, sans-serif;
+      font-weight: 700;
+      font-size: 1.08rem;
+      border: none;
+      border-radius: 18px;
+      padding: 0.7em 1.6em;
+      text-decoration: none;
+      box-shadow: 0 2px 14px rgba(124,252,0,0.13);
+      transition: background 0.18s, color 0.18s, box-shadow 0.18s, transform 0.15s;
+      cursor: pointer;
+      margin-bottom: 1.8rem;
+    }
+    
+    .catalog-btn .arrow {
+      font-size: 1.2em;
+      transition: transform 0.18s;
+    }
+    
+    .catalog-btn:hover, .catalog-btn:focus {
+      background: #5fd100;
+      color: #fff;
+      box-shadow: 0 4px 24px rgba(124,252,0,0.22);
+      transform: translateY(-2px) scale(1.04);
+    }
+    
+    .catalog-btn:hover .arrow, .catalog-btn:focus .arrow {
+      transform: translateX(-4px);
+    }
+    
     .page-title {
       text-align: center;
       font-family: 'Playfair Display', serif;
       font-size: 2.4rem;
-      color: #7CFC00;
+      color: #5ecb18;
       margin-bottom: 0.5rem;
       letter-spacing: 1px;
     }
+    
     .subtitle {
       text-align: center;
       font-size: 1.13rem;
       color: #b7e9b7;
-      margin-bottom: 2.3rem;
+      margin-bottom: 2.5rem;
       font-family: 'Montserrat', Arial, sans-serif;
     }
-    .choco-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 3.8rem 4.5rem;
-  justify-content: center;
-  margin-bottom: 3.2rem;
-  width: 100%;
-}
-    .choco-row {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  background: #232323;
-  border-radius: 26px;
-  box-shadow: 0 8px 36px rgba(124,252,0,0.13);
-  padding: 2.6rem 2.2rem 2.6rem 2.2rem;
-  min-width: 340px;
-  max-width: 390px;
-  width: 100%;
-  margin: 0;
-  position: relative;
-  transition: transform 0.18s, box-shadow 0.18s;
-}
-.choco-row:hover {
-  transform: translateY(-10px) scale(1.045);
-  box-shadow: 0 14px 48px rgba(124,252,0,0.19);
-}
-    .choco-img.square {
-  width: 180px;
-  height: 180px;
-  object-fit: cover;
-  border-radius: 20px;
-  background: #191919;
-  border: 3px solid #7CFC00;
-  box-shadow: 0 4px 32px rgba(124,252,0,0.13);
-  margin-bottom: 1.7rem;
-  margin-right: 0;
-  margin-left: 0;
-  position: static;
-  transition: box-shadow 0.18s, transform 0.18s;
-}
-.choco-row:hover .choco-img.square {
-  box-shadow: 0 10px 40px rgba(124,252,0,0.25);
-  transform: scale(1.09);
-}
-    .choco-info {
-  background: none;
-  border-radius: 0;
-  padding: 0;
-  min-width: 0;
-  box-shadow: none;
-  border: none;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin: 0;
-  text-align: center;
-}
-    @media (max-width: 900px) {
-      .choco-img.square { width: 110px; height: 110px; margin-right: 1.1rem; }
-      .choco-info { padding: 1.3rem 1rem; }
+    
+    /* Tesla-style grid layout */
+    .tesla-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2.8rem;
+      justify-content: center;
+      width: 100%;
+      margin: 0 auto 4.5rem auto;
+      max-width: 1080px;
     }
-    @media (max-width: 700px) {
-      .choco-row { flex-direction: column; min-height: unset; align-items: center; }
-      .choco-img.square {
-        width: 70vw;
-        max-width: 260px;
-        height: 70vw;
-        max-height: 260px;
-        margin: 0 auto 0.7rem auto;
-      }
-      .choco-info {
-        padding: 1.1rem 0.5rem;
-        align-items: center;
-        text-align: center;
-      }
-      .choco-name { font-size: 1.05rem; }
-      .choco-desc { font-size: 0.92rem; }
-    }
-    @media (max-width: 500px) {
-      .choco-img.square { height: 48vw; max-height: 98vw; max-width: 98vw; }
-      .choco-name { font-size: 0.98rem; }
-      .choco-desc { font-size: 0.83rem; }
-    }
-    .choco-name {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.35rem;
-      color: #7CFC00;
-      margin-bottom: 0.4rem;
-      font-weight: 700;
-    }
-    .choco-desc {
-      font-size: 1.05rem;
-      color: #e5e5e5;
-      margin-bottom: 0.2rem;
-      font-family: 'Montserrat', Arial, sans-serif;
-    }
-    @media (max-width: 900px) {
-      .choco-img.big { width: 220px; height: 140px; left: -40px; }
-      .choco-row:nth-child(even) .choco-img.big { right: -40px; }
-      .choco-info, .choco-row:nth-child(even) .choco-info { margin-left: 160px; margin-right: 160px; padding: 1.3rem 1rem; }
-    }
-    @media (max-width: 700px) {
-      .choco-row { flex-direction: column; min-height: unset; }
-      .choco-img.big, .choco-row:nth-child(even) .choco-img.big {
-        position: static;
-        width: 90vw;
-        max-width: 350px;
-        height: 120px;
-        border-radius: 18px;
-        margin: 0 auto 0.7rem auto;
-        left: unset; right: unset; top: unset; transform: none;
-        box-shadow: 0 2px 12px rgba(124,252,0,0.09);
-      }
-      .choco-info, .choco-row:nth-child(even) .choco-info {
-        margin: 0;
-        padding: 1.1rem 0.5rem;
-        align-items: center;
-        text-align: center;
-      }
-      .choco-name { font-size: 1.05rem; }
-      .choco-desc { font-size: 0.92rem; }
-    }
-    @media (max-width: 500px) {
-      .choco-img.big, .choco-row:nth-child(even) .choco-img.big { height: 72px; max-width: 98vw; }
-      .choco-name { font-size: 0.98rem; }
-      .choco-desc { font-size: 0.83rem; }
-    }
-    .choco-name {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.25rem;
-      color: #7CFC00;
-      margin-bottom: 0.4rem;
-      text-align: center;
-      font-weight: 700;
-    }
-    .choco-desc {
-      font-size: 1.02rem;
-      color: #e5e5e5;
-      text-align: center;
-      margin-bottom: 0.2rem;
-      font-family: 'Montserrat', Arial, sans-serif;
-    }
-    .back-btn {
-      display: inline-block;
-      margin: 0 auto 1.5rem auto;
-      background: transparent;
-      color: #7CFC00;
-      border: 2px solid #7CFC00;
-      border-radius: 10px;
-      font-family: 'Montserrat', Arial, sans-serif;
-      font-weight: 600;
-      font-size: 1.04rem;
-      padding: 0.5em 1.7em;
-      text-decoration: none;
-      text-align: center;
-      transition: background 0.18s, color 0.18s;
+    
+    .tesla-card {
+      background: #232323;
+      border-radius: 18px;
+      border: none;
+      box-shadow: 0 8px 30px rgba(124,252,0,0.08);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2.2rem 1.5rem 2.3rem 1.5rem;
+      transition: transform 0.22s, box-shadow 0.22s;
+      position: relative;
+      min-width: 0;
       cursor: pointer;
     }
-    .back-btn:hover, .back-btn:focus {
-      background: #7CFC00;
+    
+    .tesla-card:hover {
+      box-shadow: 0 14px 44px rgba(124,252,0,0.14);
+      transform: translateY(-10px) scale(1.03);
+      z-index: 2;
+    }
+    
+    .tesla-img {
+      width: 180px;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 18px;
+      background: #191919;
+      border: 3px solid #5ecb18;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 4px 24px rgba(124,252,0,0.13);
+      transition: transform 0.18s, box-shadow 0.18s;
+    }
+    
+    .tesla-card:hover .tesla-img {
+      box-shadow: 0 10px 40px rgba(124,252,0,0.25);
+      transform: scale(1.08);
+    }
+    
+    .tesla-info {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+    
+    .tesla-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.28rem;
+      color: #5ecb18;
+      font-weight: 700;
+      margin-bottom: 0.4rem;
+    }
+    
+    .tesla-desc {
+      color: #e5e5e5;
+      font-size: 1.02rem;
+      margin-bottom: 1.2rem;
+      font-family: 'Montserrat', Arial, sans-serif;
+    }
+    
+    .tesla-btn {
+      background: transparent;
+      color: #5ecb18;
+      font-weight: bold;
+      border: 2px solid #5ecb18;
+      border-radius: 12px;
+      padding: 0.65rem 1.5rem;
+      font-size: 0.95rem;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.18s, color 0.18s, transform 0.18s;
+    }
+    
+    .tesla-card:hover .tesla-btn {
+      background: #5ecb18;
       color: #181818;
+      transform: translateY(-2px);
     }
+    
+    /* WhatsApp float button */
+    .whatsapp-float {
+      position: fixed;
+      right: 2vw;
+      bottom: 2.5vh;
+      z-index: 9999;
+      background: none;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 24px 0 rgba(37,211,102,0.18);
+      border-radius: 50%;
+      animation: whatsappIn 0.7s cubic-bezier(.4,0,.2,1);
+      transition: transform 0.18s cubic-bezier(.4,0,.2,1), box-shadow 0.18s;
+    }
+    
+    .whatsapp-float:hover {
+      transform: scale(1.11) translateY(-4px);
+      box-shadow: 0 8px 32px 0 rgba(37,211,102,0.23);
+    }
+    
+    @keyframes whatsappIn {
+      from { opacity: 0; transform: scale(0.7) translateY(40px); }
+      to { opacity: 1; transform: scale(1) translateY(0); }
+    }
+    
+    /* Responsive styles */
+    @media (max-width: 900px) {
+      .tesla-img { width: 150px; height: 150px; }
+      .tesla-card { padding: 1.6rem 1rem 1.8rem 1rem; }
+    }
+    
     @media (max-width: 700px) {
-      .container { padding: 1.2rem 0.3rem 2.2rem 0.3rem; }
-      .page-title { font-size: 1.45rem; }
-      .choco-card { padding: 1.1rem 0.5rem 1.3rem 0.5rem; }
-      .choco-img { width: 68px; height: 68px; }
-      .choco-name { font-size: 1.05rem; }
-      .choco-desc { font-size: 0.92rem; }
+      .container { padding: 1.2rem 0.6rem 2.5rem 0.6rem; }
+      .page-title { font-size: 1.8rem; }
+      .subtitle { font-size: 1rem; }
+      .tesla-grid { gap: 1.5rem; }
+      .tesla-card { padding: 1.2rem 0.7rem 1.5rem 0.7rem; }
+      .tesla-img { width: 68vw; height: 68vw; max-width: 200px; max-height: 200px; }
+      .tesla-title { font-size: 1.15rem; }
+      .tesla-desc { font-size: 0.95rem; }
+      .tesla-btn { padding: 0.55rem 1.2rem; font-size: 0.9rem; }
+      .whatsapp-float { right: 3vw; }
     }
+    
     @media (max-width: 500px) {
-      .container { padding: 0.8rem 0.1rem 1.1rem 0.1rem; }
-      .page-title { font-size: 1.13rem; }
-      .choco-card { padding: 0.7rem 0.2rem 1rem 0.2rem; }
-      .choco-img { width: 54px; height: 54px; }
-      .choco-name { font-size: 0.98rem; }
-      .choco-desc { font-size: 0.83rem; }
+      .container { padding: 0.8rem 0.4rem 1.5rem 0.4rem; }
+      .page-title { font-size: 1.5rem; }
+      .subtitle { font-size: 0.9rem; margin-bottom: 1.8rem; }
+      .tesla-card { padding: 1rem 0.5rem 1.2rem 0.5rem; }
+      .tesla-img { width: 58vw; height: 58vw; }
+      .tesla-title { font-size: 1.05rem; }
+      .tesla-desc { font-size: 0.87rem; }
+      .tesla-btn { padding: 0.5rem 1rem; font-size: 0.85rem; }
+      .whatsapp-float { right: 2vw; bottom: 1.5vh; }
     }
-      .choco-row {
-      opacity: 0;
-      transform: translateY(40px);
-      transition: opacity 0.7s cubic-bezier(.4,0,.2,1), transform 0.7s cubic-bezier(.4,0,.2,1);
-    }
-    .choco-row.show {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    .choco-row .choco-img.big.left {
-      transform: translateX(-70px) scale(1.07);
-      opacity: 0;
-      transition: opacity 0.7s cubic-bezier(.4,0,.2,1), transform 0.7s cubic-bezier(.4,0,.2,1);
-    }
-    .choco-row.show .choco-img.big.left {
-      transform: translateX(0) scale(1);
-      opacity: 1;
-    }
-    .choco-row .choco-img.big.right {
-      transform: translateX(70px) scale(1.07);
-      opacity: 0;
-      transition: opacity 0.7s cubic-bezier(.4,0,.2,1), transform 0.7s cubic-bezier(.4,0,.2,1);
-    }
-    .choco-row.show .choco-img.big.right {
-      transform: translateX(0) scale(1);
-      opacity: 1;
-    }
-    @media (max-width: 700px) {
-      .choco-row .choco-img.big.left,
-      .choco-row .choco-img.big.right {
-        transform: scale(1.07);
-      }
-      .choco-row.show .choco-img.big.left,
-      .choco-row.show .choco-img.big.right {
-        transform: scale(1);
-      }
-    }
-</style>
-<script>
-window.addEventListener('DOMContentLoaded', function() {
-  const rows = document.querySelectorAll('.choco-row');
-  rows.forEach((row, i) => {
-    setTimeout(() => row.classList.add('show'), 160 + i * 170);
-  });
-});
-</script>
+  </style>
 </head>
 <body>
+  <header>
+    <div class="header-container">
+      <div class="logo-container">
+        <img src="logo.jpg" alt="Logo" class="logo">
+        <span class="brand-name">Ligeirinho Agro</span>
+      </div>
+      <a href="index.html" class="home-link">Voltar ao Início</a>
+    </div>
+  </header>
+
   <div class="container">
     <a href="catalogo.html" class="catalog-btn"><span class="arrow">&larr;</span> Voltar para o Catálogo</a>
-<style>
-.catalog-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5em;
-  background: #7CFC00;
-  color: #181818;
-  font-family: 'Montserrat', 'Playfair Display', Arial, serif;
-  font-weight: 700;
-  font-size: 1.08rem;
-  border: none;
-  border-radius: 18px;
-  padding: 0.7em 1.6em;
-  text-decoration: none;
-  box-shadow: 0 2px 14px rgba(124,252,0,0.13);
-  transition: background 0.18s, color 0.18s, box-shadow 0.18s, transform 0.15s;
-  cursor: pointer;
-  margin-bottom: 1.4rem;
-}
-.catalog-btn .arrow {
-  font-size: 1.2em;
-  transition: transform 0.18s;
-}
-.catalog-btn:hover, .catalog-btn:focus {
-  background: #5fd100;
-  color: #fff;
-  box-shadow: 0 4px 24px rgba(124,252,0,0.22);
-  transform: translateY(-2px) scale(1.04);
-}
-.catalog-btn:hover .arrow, .catalog-btn:focus .arrow {
-  transform: translateX(-4px);
-}
-</style>
-    <h1 class="page-title">Variedade de Chocolates</h1>
+    
+    <h1 class="page-title">Chocolates</h1>
     <div class="subtitle">Conheça nossos deliciosos chocolates artesanais:</div>
-    <div class="choco-list">
-      <div class="choco-row">
-        <img class="choco-img square" src="https://images.unsplash.com/photo-1519864600265-abb23847ef2c?auto=format&fit=crop&w=600&q=80" alt="Chocolate ao Leite">
-        <div class="choco-info">
-          <div class="choco-name">Chocolate ao Leite</div>
-          <div class="choco-desc">Clássico, cremoso e irresistível. Feito com leite fresco e cacau selecionado.</div>
+    
+    <div class="tesla-grid">
+      <div class="tesla-card">
+        <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=600&q=80" alt="Chocolate ao Leite" class="tesla-img">
+        <div class="tesla-info">
+          <div class="tesla-title">Chocolate ao Leite</div>
+          <div class="tesla-desc">Cremoso, clássico e irresistível. Feito com leite fresco e cacau selecionado.</div>
+          
         </div>
       </div>
-      <div class="choco-row">
-        <img class="choco-img square" src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=600&q=80" alt="Chocolate Meio Amargo">
-        <div class="choco-info">
-          <div class="choco-name">Chocolate Meio Amargo</div>
-          <div class="choco-desc">Sabor intenso, menos açúcar, perfeito para quem aprecia sofisticação.</div>
+      
+      <div class="tesla-card">
+        <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=600&q=80" alt="Chocolate Meio Amargo" class="tesla-img">
+        <div class="tesla-info">
+          <div class="tesla-title">Chocolate Meio Amargo</div>
+          <div class="tesla-desc">Sabor intenso, menos açúcar, perfeito para quem aprecia sofisticação.</div>
+          
         </div>
       </div>
-      <div class="choco-row">
-        <img class="choco-img square" src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=600&q=80" alt="Chocolate Branco">
-        <div class="choco-info">
-          <div class="choco-name">Chocolate Branco</div>
-          <div class="choco-desc">Delicado, suave e doce na medida certa. Ideal para momentos especiais.</div>
+      
+      <div class="tesla-card">
+        <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=600&q=80" alt="Chocolate Branco" class="tesla-img">
+        <div class="tesla-info">
+          <div class="tesla-title">Chocolate Branco</div>
+          <div class="tesla-desc">Delicado, suave e doce na medida certa. Ideal para momentos especiais.</div>
+          
         </div>
       </div>
-      <div class="choco-row">
-        <img class="choco-img square" src="https://images.unsplash.com/photo-1519864600265-abb23847ef2c?auto=format&fit=crop&w=600&q=80" alt="Chocolate com Castanhas">
-        <div class="choco-info">
-          <div class="choco-name">Chocolate com Castanhas</div>
-          <div class="choco-desc">Pedaços crocantes de castanhas brasileiras em chocolate premium.</div>
+      
+      <div class="tesla-card">
+        <img src="https://images.unsplash.com/photo-1519864600265-abb23847ef2c?auto=format&fit=crop&w=600&q=80" alt="Chocolate com Castanhas" class="tesla-img">
+        <div class="tesla-info">
+          <div class="tesla-title">Chocolate com Castanhas</div>
+          <div class="tesla-desc">Pedaços crocantes de castanhas brasileiras em chocolate premium.</div>
+          
         </div>
       </div>
-      <div class="choco-row">
-        <img class="choco-img square" src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=600&q=80" alt="Chocolate com Frutas">
-        <div class="choco-info">
-          <div class="choco-name">Chocolate com Frutas</div>
-          <div class="choco-desc">Combinação perfeita de chocolate e frutas selecionadas, sabor único.</div>
+      
+      <div class="tesla-card">
+        <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=600&q=80" alt="Chocolate com Frutas" class="tesla-img">
+        <div class="tesla-info">
+          <div class="tesla-title">Chocolate com Frutas</div>
+          <div class="tesla-desc">Combinação perfeita de chocolate e frutas selecionadas, sabor único.</div>
+          
         </div>
       </div>
     </div>
   </div>
-    <!-- Botão flutuante WhatsApp -->
-    <a href="https://wa.me/5599999999999" target="_blank" class="whatsapp-float" aria-label="Fale conosco no WhatsApp">
-        <svg width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-  <circle cx="19" cy="19" r="19" fill="#25D366"/>
-  <path d="M19 9.5c-5.24 0-9.5 4.11-9.5 9.18 0 1.62.45 3.19 1.3 4.56l-1.37 4.99 5.13-1.35c1.32.73 2.81 1.13 4.44 1.13 5.24 0 9.5-4.11 9.5-9.18S24.24 9.5 19 9.5zm0 16.6c-1.47 0-2.87-.38-4.06-1.11l-.29-.17-3.05.8.81-2.96-.19-.3c-.8-1.28-1.22-2.74-1.22-4.21 0-4.15 3.61-7.53 8.06-7.53s8.06 3.38 8.06 7.53-3.61 7.53-8.06 7.53zm4.42-5.67c-.24-.12-1.42-.7-1.64-.78-.22-.08-.38-.12-.54.12-.16.24-.62.78-.76.94-.14.16-.28.18-.52.06-.24-.12-1.01-.37-1.93-1.19-.71-.63-1.19-1.41-1.33-1.65-.14-.24-.01-.36.11-.48.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.54-1.3-.74-1.78-.2-.48-.4-.41-.54-.42-.14-.01-.3-.01-.46-.01-.16 0-.42.06-.64.28-.22.22-.84.82-.84 2 0 1.18.86 2.33.98 2.49.12.16 1.69 2.59 4.1 3.53.57.2 1.01.32 1.36.41.57.14 1.09.12 1.5.07.46-.07 1.42-.58 1.62-1.15.2-.57.2-1.05.14-1.15-.06-.1-.22-.16-.46-.28z" fill="#fff"/>
-</svg>
-    </a>
-    <style>
-        .whatsapp-float {
-            position: fixed;
-            right: 2vw;
-            bottom: 2.5vh;
-            z-index: 9999;
-            background: none;
-            border: none;
-            outline: none;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 4px 24px 0 rgba(37,211,102,0.18);
-            border-radius: 50%;
-            animation: whatsappIn 0.7s cubic-bezier(.4,0,.2,1);
-            transition: transform 0.18s cubic-bezier(.4,0,.2,1), box-shadow 0.18s;
-        }
-        .whatsapp-float:hover {
-            transform: scale(1.11) translateY(-4px);
-            box-shadow: 0 8px 32px 0 rgba(37,211,102,0.23);
-        }
-        @keyframes whatsappIn {
-            from { opacity: 0; transform: scale(0.7) translateY(40px); }
-            to { opacity: 1; transform: scale(1) translateY(0); }
-        }
-        @media (max-width: 700px) {
-            .whatsapp-float { right: 3vw; bottom: 2.5vh; }
-        }
-        @media (max-width: 500px) {
-            .whatsapp-float { right: 2vw; bottom: 1.5vh; }
-        }
-    </style>
+  
+  <!-- Botão flutuante WhatsApp -->
+  <a href="https://wa.me/5599999999999" target="_blank" class="whatsapp-float" aria-label="Fale conosco no WhatsApp">
+    <svg width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <circle cx="19" cy="19" r="19" fill="#25D366"/>
+      <path d="M19.0002 9.5C13.7752 9.5 9.5002 13.775 9.5002 19C9.5002 20.5625 9.9127 22.05 10.6377 23.3375L9.6377 28.5L14.9252 27.5C16.2127 28.225 17.6377 28.5 19.0002 28.5C24.2252 28.5 28.5002 24.225 28.5002 19C28.5002 13.775 24.2252 9.5 19.0002 9.5ZM23.3502 22.2375C23.1127 22.9125 22.0627 23.5125 21.2627 23.6375C20.6877 23.725 19.9377 23.7875 17.3627 22.8125C14.0502 21.5625 11.9752 18.2 11.8502 18.0375C11.7252 17.875 10.6377 16.425 10.6377 14.925C10.6377 13.425 11.4002 12.7 11.7127 12.3875C11.9627 12.1375 12.3377 12.025 12.7002 12.025C12.8252 12.025 12.9377 12.025 13.0377 12.0375C13.3502 12.05 13.5002 12.075 13.7002 12.575C13.9502 13.2 14.5877 14.7 14.6502 14.825C14.7127 14.95 14.7752 15.1125 14.6877 15.275C14.6002 15.4375 14.5377 15.5125 14.4127 15.6625C14.2877 15.8125 14.1752 15.925 14.0502 16.075C13.9252 16.2125 13.7877 16.3625 13.9377 16.6125C14.0877 16.8625 14.5877 17.675 15.3252 18.325C16.2752 19.15 17.0752 19.425 17.3627 19.55C17.5877 19.6375 17.8502 19.6125 18.0002 19.45C18.1877 19.25 18.4127 18.925 18.6377 18.6C18.8002 18.35 19.0127 18.3125 19.2377 18.4C19.4627 18.475 21.0127 19.2375 21.2627 19.3625C21.5127 19.4875 21.6752 19.55 21.7377 19.65C21.8002 19.775 21.8002 20.4 21.5627 21.15L23.3502 22.2375Z" fill="white"/>
+    </svg>
+  </a>
+  
+  <script>
+    // Efeito de exibição gradual dos cards ao carregar a página
+    document.addEventListener('DOMContentLoaded', () => {
+      const cards = document.querySelectorAll('.tesla-card');
+      setTimeout(() => {
+        cards.forEach((card, index) => {
+          setTimeout(() => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(40px)';
+            setTimeout(() => {
+              card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+              card.style.opacity = '1';
+              card.style.transform = 'translateY(0)';
+            }, 50);
+          }, index * 120);
+        });
+      }, 300);
+    });
+  </script>
 </body>
 </html>
